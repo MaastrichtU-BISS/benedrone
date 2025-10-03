@@ -10,7 +10,7 @@ const map = ref<Map | null>(null);
 // Be carefull since google maps uses [latitude, longitude]
 const BRIGHTLANDS_CAMPUS_COORDS = [5.97311012907296, 50.883308586237696]; // [longitude, latitude]
 
-onMounted(() => {
+onMounted(async () => {
     // create map
     map.value = createMap('map', BRIGHTLANDS_CAMPUS_COORDS, 16);
 
@@ -22,7 +22,8 @@ onMounted(() => {
     const noFlyZones = [
         'pdok/landingsite',
         'pdok/luchtvaartgebieden',
-        'pdok/luchtvaartgebieden-zonder-natura-2000'
+        'pdok/luchtvaartgebieden-zonder-natura-2000',
+        // 'rijksoverheid/open-category'
     ]
 
     addNoFlyZones(map.value as Map, noFlyZones);

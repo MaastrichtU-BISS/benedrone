@@ -1,30 +1,24 @@
 {
   "type": "FeatureCollection",
-  "timeStamp": "2025-10-03T09:44:26Z",
+  "timeStamp": "2025-10-03T14:54:40Z",
   "links": [
     {
       "rel": "self",
       "title": "This document as GeoJSON",
       "type": "application/geo+json",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=json"
+      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=json&limit=1000"
     },
     {
       "rel": "alternate",
       "title": "This document as JSON-FG",
       "type": "application/vnd.ogc.fg+json",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=jsonfg"
+      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=jsonfg&limit=1000"
     },
     {
       "rel": "alternate",
       "title": "This document as HTML",
       "type": "text/html",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=html"
-    },
-    {
-      "rel": "next",
-      "title": "Next page",
-      "type": "application/geo+json",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?cursor=Cw%7C&f=json"
+      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=html&limit=1000"
     }
   ],
   "features": [
@@ -107,7 +101,489 @@
       },
       "geometry": { "type": "Point", "coordinates": [4.859122225115609, 52.33433610880673] },
       "id": "32cea6b0-e40f-5dd7-97ee-25a217e38f84"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 84,
+        "specifiek": "Heliport",
+        "txtname": "MAASTRICHT/MAASTRICHT UNIVERSITAIR MEDISCH CENTRUM"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.712500002991055, 50.834444441723676] },
+      "id": "4c5d1b1f-69f8-5f0a-8f8f-4dcbc3b5f37a"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 112, "specifiek": "Heliport", "txtname": "NIJMEGEN/UMC ST. RADBOUD" },
+      "geometry": { "type": "Point", "coordinates": [5.862936114072948, 51.82343610875804] },
+      "id": "57c08c6f-b5d2-5443-9552-0c505580246b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 115,
+        "specifiek": "Heliport",
+        "txtname": "UTRECHT/UNIVERSITAIR MEDISCH CENTRUM UTRECHT"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.18131944709471, 52.08676944178757] },
+      "id": "972fb8e7-fecd-5554-9df9-6799bd86cd78"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 120, "specifiek": "Heliport", "txtname": "SNEEK/ANTONIUS ZIEKENHUIS" },
+      "geometry": { "type": "Point", "coordinates": [5.639975003178686, 53.034761108814244] },
+      "id": "61d09461-f593-5ef5-aabf-0316d5814305"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 122,
+        "specifiek": "Heliport",
+        "txtname": "DORDRECHT/ALBERT SCHWEITZER ZIEKENHUIS, LOCATIE AMSTELWIJCK"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.6511138920673805, 51.77634444178974] },
+      "id": "9b5f63f2-2848-50c1-835f-40c76c2d3f7b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 129,
+        "specifiek": "Heliport",
+        "txtname": "ROTTERDAM/ERASMUS MEDISCH CENTRUM"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.470833336078331, 51.909999997800185] },
+      "id": "e34447f1-c529-5e68-970d-1d5e5fe19116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 148,
+        "specifiek": "Heliport",
+        "txtname": "TILBURG/ST. ELISABETH ZIEKENHUIS"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.104722225048173, 51.53888888676768] },
+      "id": "1d45de85-3c53-5e53-a03c-9e440c8cfbd5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 156,
+        "specifiek": "Heliport",
+        "txtname": "GOES/ADMIRAAL DE RUYTER ZIEKENHUIS"
+      },
+      "geometry": { "type": "Point", "coordinates": [3.910500003041246, 51.48480277579854] },
+      "id": "ef666592-903f-5750-a3b8-f73ee2384c8e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 164,
+        "specifiek": "Heliport",
+        "txtname": "DEN HAAG/HAGA ZIEKENHUIS, LOCATIE LEYWEG"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.262566670090334, 52.05583333081198] },
+      "id": "b730122e-eeb4-573d-a621-d4629ddf2c6f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 176,
+        "specifiek": "Heliport",
+        "txtname": "BEVERWIJK/RODE KRUIS ZIEKENHUIS"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.6515694471278906, 52.47913888681865] },
+      "id": "0b20c090-418c-572d-ba86-4b4d5464a5f4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 191,
+        "specifiek": "Heliport",
+        "txtname": "GRONINGEN/UNIVERSITAIR MEDISCH CENTRUM"
+      },
+      "geometry": { "type": "Point", "coordinates": [6.576077781196022, 53.22173333079567] },
+      "id": "5bea0486-9dfc-52b8-8120-c134a41f1486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 215,
+        "specifiek": "Heliport",
+        "txtname": "ENSCHEDE/MEDISCH SPECTRUM TWENTE"
+      },
+      "geometry": { "type": "Point", "coordinates": [6.891263892106629, 52.215477775745256] },
+      "id": "9ef654be-b731-5e01-9250-f3f437be1770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 218,
+        "specifiek": "Heliport",
+        "txtname": "LEIDEN/LEIDS UNIVERSITAIR MEDISCH CENTRUM"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.477997225100322, 52.16625555381049] },
+      "id": "f174d0a4-e07f-508e-9ceb-3b77c8260099"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 15, "specifiek": "Glider", "txtname": "AXEL" },
+      "geometry": { "type": "Point", "coordinates": [3.891390003022218, 51.25555555378989] },
+      "id": "acfa1352-6243-52f3-bea7-93ae1c654739"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 32, "specifiek": "Glider", "txtname": "BIDDINGHUIZEN" },
+      "geometry": { "type": "Point", "coordinates": [5.674166670124942, 52.429166664787914] },
+      "id": "53f4fc28-e571-5ee9-b0e7-be28d9061f09"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 55, "specifiek": "Glider", "txtname": "CASTRICUM" },
+      "geometry": { "type": "Point", "coordinates": [4.626666670132866, 52.53666666482175] },
+      "id": "f0e19684-f52e-5bbd-b251-2b3f65b0d754"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 74, "specifiek": "Glider", "txtname": "MALDEN" },
+      "geometry": { "type": "Point", "coordinates": [5.88000000306976, 51.78583333075606] },
+      "id": "72e16538-47bd-5f02-90cb-f5069aa83630"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 77, "specifiek": "Glider", "txtname": "SCHINVELD" },
+      "geometry": { "type": "Point", "coordinates": [6.002500003003199, 50.981944441721424] },
+      "id": "0930c873-ac87-5b6f-8d9d-f8a774c67945"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 96, "specifiek": "Glider", "txtname": "NISTELRODE" },
+      "geometry": { "type": "Point", "coordinates": [5.5494444470608695, 51.68333333076113] },
+      "id": "395452da-39b0-5f25-9430-9a572246f57e"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 105, "specifiek": "Glider", "txtname": "HAAMSTEDE" },
+      "geometry": { "type": "Point", "coordinates": [3.712222225059408, 51.70888888681304] },
+      "id": "e33c5695-b1b9-5cc1-86d7-0862cca06d76"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 106, "specifiek": "Glider", "txtname": "NOORDKOP" },
+      "geometry": { "type": "Point", "coordinates": [5.0050000031653665, 52.8952777758262] },
+      "id": "9b96e0e1-b40c-5910-ac2a-e5e1bf3cb940"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 111, "specifiek": "Glider", "txtname": "VALKENBURG" },
+      "geometry": { "type": "Point", "coordinates": [4.417941670100159, 52.16614721981214] },
+      "id": "4b05b428-9aee-506a-8412-7366b715847f"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 135, "specifiek": "Glider", "txtname": "LEMELERVELD" },
+      "geometry": { "type": "Point", "coordinates": [6.332777781128624, 52.46777777577107] },
+      "id": "607bb466-70b8-5bc3-ba98-b95ca1a72c22"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 163, "specifiek": "Glider", "txtname": "LANGEVELD" },
+      "geometry": { "type": "Point", "coordinates": [4.513610003111746, 52.297777775814964] },
+      "id": "82bbe0fd-e6ff-516d-b76b-6d9b885bd862"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 189, "specifiek": "Glider", "txtname": "VEENDAM" },
+      "geometry": { "type": "Point", "coordinates": [6.8236111141834765, 53.0844444417829] },
+      "id": "4b518b32-9aac-5d6a-becb-34f2f03c8c65"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 192, "specifiek": "Glider", "txtname": "VENLO" },
+      "geometry": { "type": "Point", "coordinates": [6.21611000303455, 51.36305555373023] },
+      "id": "4f287adc-6557-55d1-af46-c6a2af41a23a"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 198, "specifiek": "Glider", "txtname": "SOESTERBERG" },
+      "geometry": { "type": "Point", "coordinates": [5.264166670098857, 52.13388888678723] },
+      "id": "d63bbcce-ab4b-532b-89ea-c988dd8d04ea"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 213, "specifiek": "Glider", "txtname": "DE VOORST" },
+      "geometry": { "type": "Point", "coordinates": [5.9105555591476175, 52.684722219791894] },
+      "id": "bd0f426e-2509-5825-b66f-ca3406b94e1d"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 18, "specifiek": "HangGlider", "txtname": "ZELHEM" },
+      "geometry": { "type": "Point", "coordinates": [6.318333336089796, 52.019166664753236] },
+      "id": "d1827cb9-2155-5c35-a416-016ee2ca66ba"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 23, "specifiek": "HangGlider", "txtname": "BRONKHORST" },
+      "geometry": { "type": "Point", "coordinates": [6.432777781086655, 51.98222221974863] },
+      "id": "c3a4459b-8996-5350-851c-823c8bb79234"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 24, "specifiek": "HangGlider", "txtname": "AMBT DELDEN" },
+      "geometry": { "type": "Point", "coordinates": [6.7041666701085605, 52.23749999775138] },
+      "id": "6808862b-8024-5f65-8383-867c271f5703"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 37, "specifiek": "HangGlider", "txtname": "AALTEN" },
+      "geometry": { "type": "Point", "coordinates": [6.778611114084118, 51.95333333073787] },
+      "id": "9ffd1bcb-2136-5ae7-be6a-06fef10fac02"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 43, "specifiek": "HangGlider", "txtname": "GENDT" },
+      "geometry": { "type": "Point", "coordinates": [5.94083333607906, 51.894999997758745] },
+      "id": "46013a40-5724-5a4e-8b0f-958a2b319692"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 46, "specifiek": "HangGlider", "txtname": "AARLANDERVEEN" },
+      "geometry": { "type": "Point", "coordinates": [4.741111114098687, 52.14111110880213] },
+      "id": "680799de-dd50-5f0a-81ef-3d3610dc98d8"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 65, "specifiek": "HangGlider", "txtname": "SCHALKWIJK (HOUTEN)" },
+      "geometry": { "type": "Point", "coordinates": [5.18500000308574, 51.981944441783234] },
+      "id": "66ccac16-1cd9-52fd-8fd7-5939324ac90d"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 68, "specifiek": "HangGlider", "txtname": "ZEDDAM" },
+      "geometry": { "type": "Point", "coordinates": [6.275000003080849, 51.914722219750324] },
+      "id": "69f04b76-3338-5feb-9bc3-4e9426ca7063"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 69, "specifiek": "HangGlider", "txtname": "BRONKHORST" },
+      "geometry": { "type": "Point", "coordinates": [6.430277781087914, 51.99694444174928] },
+      "id": "f871f44f-8e13-5723-a336-97222e9bf6a5"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 80, "specifiek": "HangGlider", "txtname": "AALTEN" },
+      "geometry": { "type": "Point", "coordinates": [6.582500003085066, 51.9638888867437] },
+      "id": "8bad4e4f-de9c-515d-abfa-ccec885a1a57"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 81, "specifiek": "HangGlider", "txtname": "ELL" },
+      "geometry": { "type": "Point", "coordinates": [5.765277781020824, 51.19972221973625] },
+      "id": "e386a8c9-65b8-5a9f-98ac-73729f519a06"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 86, "specifiek": "HangGlider", "txtname": "RINSEMAGEEST" },
+      "geometry": { "type": "Point", "coordinates": [5.940555559203391, 53.3041666648172] },
+      "id": "df1c1d9c-8fec-5ace-9d0c-cd197168e18f"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 87, "specifiek": "HangGlider", "txtname": "WINTERSWIJK" },
+      "geometry": { "type": "Point", "coordinates": [6.776666670083973, 51.9516666647379] },
+      "id": "b4d73b4f-0e16-59ec-86c4-785fd7b43232"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 93, "specifiek": "HangGlider", "txtname": "BORCULO" },
+      "geometry": { "type": "Point", "coordinates": [6.493333336099121, 52.12749999775278] },
+      "id": "ec62a1f3-7f92-5d07-8141-daf243345e5e"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 94, "specifiek": "HangGlider", "txtname": "AMERICA" },
+      "geometry": { "type": "Point", "coordinates": [5.963333336040935, 51.441666664740175] },
+      "id": "07c4ff61-d646-56a9-a602-80a6c1fc8a13"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 99, "specifiek": "HangGlider", "txtname": "GEESTEREN" },
+      "geometry": { "type": "Point", "coordinates": [6.558888892098419, 52.11944444175063] },
+      "id": "d1e905ac-a658-5e82-834d-efd51cd6b431"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 110, "specifiek": "HangGlider", "txtname": "STEGEREN" },
+      "geometry": { "type": "Point", "coordinates": [6.493333336136692, 52.55916666477035] },
+      "id": "97d0e54f-1df4-52fc-8c77-5c0670ee7884"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 113, "specifiek": "HangGlider", "txtname": "NOORDELOOS" },
+      "geometry": { "type": "Point", "coordinates": [4.9438888920796655, 51.91499999778725] },
+      "id": "d62e9ce9-7d8f-50c3-b1eb-56b053c64585"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 114, "specifiek": "HangGlider", "txtname": "NIEUWVLIET" },
+      "geometry": { "type": "Point", "coordinates": [3.45555555903015, 51.367499997806384] },
+      "id": "3c452552-5ec0-5d33-87dd-29b046b4f95f"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 123, "specifiek": "HangGlider", "txtname": "STERKSEL" },
+      "geometry": { "type": "Point", "coordinates": [5.636944447032747, 51.34555555374546] },
+      "id": "2d4b240d-1f1d-574b-83a1-de92c7de2079"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 124, "specifiek": "HangGlider", "txtname": "VLIJMEN" },
+      "geometry": { "type": "Point", "coordinates": [5.210966670059809, 51.675822219770225] },
+      "id": "036b9067-60a8-5306-9c26-4a2e856ce350"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 131, "specifiek": "HangGlider", "txtname": "AMEIDE" },
+      "geometry": { "type": "Point", "coordinates": [4.950833336081921, 51.9413888867881] },
+      "id": "ff7b6928-ac7b-508c-a186-5ce67cda018b"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 136, "specifiek": "HangGlider", "txtname": "GIETHOORN" },
+      "geometry": { "type": "Point", "coordinates": [6.071388892153737, 52.75305555379018] },
+      "id": "6fcc4057-cd9b-550f-9e36-e9d67cf69557"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 160, "specifiek": "HangGlider", "txtname": "GEESTEREN" },
+      "geometry": { "type": "Point", "coordinates": [6.483888892101709, 52.15749999775419] },
+      "id": "59ef41b1-6269-55c2-a5d7-8ffbfa281556"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 166, "specifiek": "HangGlider", "txtname": "HOEK" },
+      "geometry": { "type": "Point", "coordinates": [3.76388889202773, 51.326944441796215] },
+      "id": "a5d2e243-e8b6-5e52-81ca-d9c90edadf75"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 173, "specifiek": "HangGlider", "txtname": "SIBCULO" },
+      "geometry": { "type": "Point", "coordinates": [6.644722225131257, 52.4977777757636] },
+      "id": "40f34b65-c649-559a-9791-9bfc6eb863fb"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 178, "specifiek": "HangGlider", "txtname": "NIEUW-SCHOONEBEEK" },
+      "geometry": { "type": "Point", "coordinates": [7.0136502811437555, 52.64107027575915] },
+      "id": "1c706d9f-b93d-57ff-b834-cb84df111224"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 180, "specifiek": "HangGlider", "txtname": "WANSWERT" },
+      "geometry": { "type": "Point", "coordinates": [5.844166670204273, 53.314722219820396] },
+      "id": "878c66e5-dd40-5dca-9751-8c34bb9d1c87"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 186, "specifiek": "HangGlider", "txtname": "BRUINEHAAR" },
+      "geometry": { "type": "Point", "coordinates": [6.700000003128524, 52.46666666476073] },
+      "id": "4d672f6d-a714-59ff-a28f-c266f92da5d4"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 194, "specifiek": "HangGlider", "txtname": "MANDERVEEN" },
+      "geometry": { "type": "Point", "coordinates": [6.81111111412768, 52.457222219757284] },
+      "id": "fbd6aeba-f5f9-58b6-9133-65e3acb73cf5"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 196, "specifiek": "HangGlider", "txtname": "GRIENDTSVEEN" },
+      "geometry": { "type": "Point", "coordinates": [5.925000003040944, 51.44166666474127] },
+      "id": "0d0d38df-86c4-51f0-9490-aa956a469e1f"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 197, "specifiek": "HangGlider", "txtname": "FEANWALDEN" },
+      "geometry": { "type": "Point", "coordinates": [5.955555559199472, 53.261388886814956] },
+      "id": "156c0451-578e-5659-a9ab-d11ea75890df"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 199, "specifiek": "HangGlider", "txtname": "SAS VAN GENT" },
+      "geometry": { "type": "Point", "coordinates": [3.7861111140242287, 51.28388888679394] },
+      "id": "27a78eae-d929-525c-a0c8-08bb69b89a51"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 209, "specifiek": "HangGlider", "txtname": "BARCHEM" },
+      "geometry": { "type": "Point", "coordinates": [6.451944447097548, 52.10944444175322] },
+      "id": "a54bd895-7943-59ff-8dfa-0b92276799ae"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 214, "specifiek": "HangGlider", "txtname": "NIEUWKOOP" },
+      "geometry": { "type": "Point", "coordinates": [4.758055559098624, 52.140277775801586] },
+      "id": "0b9e3ecf-1a02-5055-90f9-be5bd4d6e713"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 219, "specifiek": "HangGlider", "txtname": "MEERKERK" },
+      "geometry": { "type": "Point", "coordinates": [4.974166670080345, 51.92277777578671] },
+      "id": "2bcca05e-4198-56b8-b245-d46497400226"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 225, "specifiek": "HangGlider", "txtname": "ZWEELOO" },
+      "geometry": { "type": "Point", "coordinates": [6.752777781159056, 52.812222219773524] },
+      "id": "20acbf70-357c-50ad-bbcf-3a395bdffc67"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 226, "specifiek": "HangGlider", "txtname": "NISTELRODE" },
+      "geometry": { "type": "Point", "coordinates": [5.548611114060864, 51.68333333076118] },
+      "id": "fbc98c9e-e9f0-52e6-bee6-c945adc27f74"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 229, "specifiek": "HangGlider", "txtname": "WINTERSWIJK" },
+      "geometry": { "type": "Point", "coordinates": [6.782777781086126, 51.976944441738695] },
+      "id": "4cd357fd-9878-5718-8a69-1d06673f90e5"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 230, "specifiek": "HangGlider", "txtname": "NUMANSDORP" },
+      "geometry": { "type": "Point", "coordinates": [4.4555555590650044, 51.75305555379423] },
+      "id": "b8490668-8e83-5ffc-acc5-5052d41e0c19"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 237, "specifiek": "HangGlider", "txtname": "HOOGHALEN" },
+      "geometry": { "type": "Point", "coordinates": [6.518333336169224, 52.92555555378486] },
+      "id": "d5a2b36d-3ba8-5b32-b802-7d80ad1109a5"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 244, "specifiek": "HangGlider", "txtname": "KRONENBERG" },
+      "geometry": { "type": "Point", "coordinates": [5.988055559039498, 51.42388888673883] },
+      "id": "8fbefc09-219e-5850-821d-a38dfe5b82b1"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 75, "specifiek": "Microlight", "txtname": "MIDDENMEER" },
+      "geometry": { "type": "Point", "coordinates": [5.022777781158273, 52.81583333082236] },
+      "id": "40c8a787-d180-5a90-974f-e381d605918b"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": 201, "specifiek": "Microlight", "txtname": "BEVERWIJK" },
+      "geometry": { "type": "Point", "coordinates": [4.6963888921281, 52.48083333081744] },
+      "id": "293d1185-6995-54a1-a735-777a94dbaab2"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": null, "specifiek": "Heliport", "txtname": "Vlieland - SAR" },
+      "geometry": { "type": "Point", "coordinates": [5.085625295238624, 53.29691738755032] },
+      "id": "1260355f-06c5-5844-b5ff-3afe917f7e2c"
     }
   ],
-  "numberReturned": 10
+  "numberReturned": 83
 }

@@ -47,6 +47,11 @@ export function addNoFlyZones(map: Map, nfzList: string[]): void {
       }),
     })
 
+    // noFlyZonesVector.on('addfeature', (e) => {
+    //   console.log('Feature geometry:', e.feature.getGeometry().getType())
+    //   console.log('Coordinates:', e.feature.getGeometry().getCoordinates())
+    // })
+
     const noFlyZonesLayer = new Layer.Vector({
       source: noFlyZonesVector,
       style: (feature) => {
