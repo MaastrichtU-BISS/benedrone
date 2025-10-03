@@ -7,7 +7,7 @@ import { Style, Stroke, Fill, Circle } from 'ol/style'
 import Overlay from 'ol/Overlay'
 import type { Coordinate } from 'ol/coordinate'
 import { fromLonLat } from 'ol/proj'
-import type RenderFeature from 'ol/render/Feature'
+import { getCenter } from 'ol/extent'
 import { Feature } from 'ol'
 import { Geometry, LineString, Point, Polygon } from 'ol/geom'
 
@@ -61,6 +61,7 @@ export function addNoFlyZones(map: Map, nfzList: string[]): void {
           })
         } else {
           return new Style({
+            fill: new Fill({ color: 'rgba(255,0,0,0.3)' }),
             stroke: new Stroke({
               color: '#ff0000',
               width: 1,
@@ -99,40 +100,35 @@ export function addNfzOverlay(map: Map, elementId: string): void {
     if (clickedFeature instanceof Feature) {
       const geometry = clickedFeature?.getGeometry()
 
-      if (
-        geometry instanceof Point ||
-        geometry instanceof Polygon ||
-        geometry instanceof LineString
-      ) {
-        const coords = geometry.getCoordinates() as Coordinate
-        const props = clickedFeature.getProperties()
-
-        console.log(props)
-
-        const nameEle = document.createElement('b')
-        nameEle.innerText = props.name ?? 'No name'
-
-        popupElement.appendChild(nameEle)
-
-        const elevation = props.elevation?.value
-        if (elevation) {
-          const elevationEle = document.createElement('div')
-          elevationEle.innerText = `Elevation: ${elevation ?? '-1'}`
-          popupElement.appendChild(elevationEle)
-        }
-
-        const osmTags = props.osmTags
-
-        if (osmTags) {
-          Object.entries(osmTags).forEach(([key, value]) => {
-            const tagEle = document.createElement('div')
-            tagEle.innerText = `${key}: ${value}`
-            popupElement.appendChild(tagEle)
-          })
-        }
-
-        popup.setPosition(coords)
+      let coords = undefined
+      if (geometry instanceof Point) {
+        coords = geometry.getCoordinates() as Coordinate
+      } else if (geometry instanceof Polygon || geometry instanceof LineString) {
+        coords = getCenter(geometry.getExtent())
       }
+
+      const props = clickedFeature.getProperties()
+
+      const nameEle = document.createElement('b')
+      nameEle.innerText = props.txtname ?? props.source_txt ?? 'No name'
+
+      popupElement.appendChild(nameEle)
+
+      const localType = props.localtype
+      if (localType) {
+        const localTypeEle = document.createElement('div')
+        localTypeEle.innerText = localType
+        popupElement.appendChild(localTypeEle)
+      }
+
+      const specific = props.specifiek
+      if (specific) {
+        const specificEle = document.createElement('div')
+        specificEle.innerText = specific
+        popupElement.appendChild(specificEle)
+      }
+
+      popup.setPosition(coords)
     } else {
       popup.setPosition(undefined) // hide popup if clicked outside
     }
