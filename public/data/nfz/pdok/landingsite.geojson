@@ -1,0 +1,113 @@
+{
+  "type": "FeatureCollection",
+  "timeStamp": "2025-10-03T09:44:26Z",
+  "links": [
+    {
+      "rel": "self",
+      "title": "This document as GeoJSON",
+      "type": "application/geo+json",
+      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=json"
+    },
+    {
+      "rel": "alternate",
+      "title": "This document as JSON-FG",
+      "type": "application/vnd.ogc.fg+json",
+      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=jsonfg"
+    },
+    {
+      "rel": "alternate",
+      "title": "This document as HTML",
+      "type": "text/html",
+      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=html"
+    },
+    {
+      "rel": "next",
+      "title": "Next page",
+      "type": "application/geo+json",
+      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?cursor=Cw%7C&f=json"
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "gid": null, "specifiek": "Heliport", "txtname": "Vlieland - SAR" },
+      "geometry": { "type": "Point", "coordinates": [5.085625295238624, 53.29691738755032] },
+      "id": "50f624e8-ae48-5a82-9644-ac28d581e0a2"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": null, "specifiek": "Heliport", "txtname": "Terschelling - SAR" },
+      "geometry": { "type": "Point", "coordinates": [5.2780551229286905, 53.38412128347233] },
+      "id": "b9254275-5354-5bcf-8582-c5a3546501f8"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": null, "specifiek": "Heliport", "txtname": "Schiermonnikoog - SAR" },
+      "geometry": { "type": "Point", "coordinates": [6.194714179934864, 53.473154152565634] },
+      "id": "a88e5f55-4610-53a1-8883-f793b58f5e20"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": null, "specifiek": "Heliport", "txtname": "Utrecht Medisch Center" },
+      "geometry": { "type": "Point", "coordinates": [5.181405658809428, 52.08680624688177] },
+      "id": "b8ae7a85-f81a-5f69-a746-8a4d276fdc74"
+    },
+    {
+      "type": "Feature",
+      "properties": { "gid": null, "specifiek": "Heliport", "txtname": "Heliport Eemshaven" },
+      "geometry": { "type": "Point", "coordinates": [6.814331441938361, 53.46085110680914] },
+      "id": "e8ee5dc9-c56e-5cbe-81df-2b59b59b7283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 2,
+        "specifiek": "Heliport",
+        "txtname": "ZWOLLE/ISALA KLINIEKEN, LOCATIE SOPHIA"
+      },
+      "geometry": { "type": "Point", "coordinates": [6.122530559132615, 52.51349999777884] },
+      "id": "4f8b9851-28d4-51d7-b839-f7e3edec47de"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 13,
+        "specifiek": "Heliport",
+        "txtname": "DEN HAAG/MC HAAGLANDEN, LOCATIE WESTEINDE"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.300288892091995, 52.07400833081164] },
+      "id": "81a9e545-0b43-558e-98ae-04c577f7fea3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 44,
+        "specifiek": "Heliport",
+        "txtname": "TERNEUZEN/ZIEKENHUIS ZEEUWS-VLAANDEREN, LOCATIE DE HONTE"
+      },
+      "geometry": { "type": "Point", "coordinates": [3.8625000030264967, 51.308333330792806] },
+      "id": "5ece5581-f42e-5b71-a8c9-e3e56e7c65e1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 61,
+        "specifiek": "Heliport",
+        "txtname": "LEEUWARDEN/MEDISCH CENTRUM LEEUWARDEN, LOCATIE ZUID"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.802819447192721, 53.18850555381616] },
+      "id": "997d3162-2f88-5f77-aa8e-4cd7f2946248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "gid": 79,
+        "specifiek": "Heliport",
+        "txtname": "AMSTERDAM/VU MEDISCH CENTRUM"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.859122225115609, 52.33433610880673] },
+      "id": "32cea6b0-e40f-5dd7-97ee-25a217e38f84"
+    }
+  ],
+  "numberReturned": 10
+}

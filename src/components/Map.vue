@@ -19,17 +19,12 @@ onMounted(() => {
     }
 
     // add no fly zones
-    // taken from https://www.openaip.net/data/exports?page=1&limit=50&sortBy=country&sortDesc=true&failed=false&country=NL&format=geojson
     const noFlyZones = [
-        'nl_apt',
-        // 'nl_asp',
-        'nl_hot',
-        'nl_nav',
-        'nl_obs',
-        'nl_raa',
-        'nl_rca',
-        'nl_rpp',
+        'pdok/landingsite',
+        'pdok/luchtvaartgebieden',
+        'pdok/luchtvaartgebieden-zonder-natura-2000'
     ]
+
     addNoFlyZones(map.value as Map, noFlyZones);
 
     // add info tooltip to nfz when clicked
