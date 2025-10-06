@@ -577,13 +577,7 @@
       "properties": { "gid": 201, "specifiek": "Microlight", "txtname": "BEVERWIJK" },
       "geometry": { "type": "Point", "coordinates": [4.6963888921281, 52.48083333081744] },
       "id": "293d1185-6995-54a1-a735-777a94dbaab2"
-    },
-    {
-      "type": "Feature",
-      "properties": { "gid": null, "specifiek": "Heliport", "txtname": "Vlieland - SAR" },
-      "geometry": { "type": "Point", "coordinates": [5.085625295238624, 53.29691738755032] },
-      "id": "1260355f-06c5-5844-b5ff-3afe917f7e2c"
     }
   ],
-  "numberReturned": 83
+  "total": 82
 }
