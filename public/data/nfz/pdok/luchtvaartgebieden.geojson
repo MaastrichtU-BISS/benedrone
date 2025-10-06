@@ -1,26 +1,6 @@
 {
   "type": "FeatureCollection",
-  "timeStamp": "2025-10-06T08:51:26Z",
-  "links": [
-    {
-      "rel": "self",
-      "title": "This document as GeoJSON",
-      "type": "application/geo+json",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/luchtvaartgebieden_zonder_natura2000/items?f=json&limit=1000"
-    },
-    {
-      "rel": "alternate",
-      "title": "This document as JSON-FG",
-      "type": "application/vnd.ogc.fg+json",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/luchtvaartgebieden_zonder_natura2000/items?f=jsonfg&limit=1000"
-    },
-    {
-      "rel": "alternate",
-      "title": "This document as HTML",
-      "type": "text/html",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/luchtvaartgebieden_zonder_natura2000/items?f=html&limit=1000"
-    }
-  ],
+  "total": 507,
   "features": [
     {
       "type": "Feature",
@@ -34364,6 +34344,5 @@
       },
       "id": "5355ab58-8a5d-59a8-b4ff-c4d218f771a4"
     }
-  ],
-  "numberReturned": 507
+  ]
 }

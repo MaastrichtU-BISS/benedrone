@@ -1,26 +1,6 @@
 {
   "type": "FeatureCollection",
-  "timeStamp": "2025-10-03T14:54:40Z",
-  "links": [
-    {
-      "rel": "self",
-      "title": "This document as GeoJSON",
-      "type": "application/geo+json",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=json&limit=1000"
-    },
-    {
-      "rel": "alternate",
-      "title": "This document as JSON-FG",
-      "type": "application/vnd.ogc.fg+json",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=jsonfg&limit=1000"
-    },
-    {
-      "rel": "alternate",
-      "title": "This document as HTML",
-      "type": "text/html",
-      "href": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections/landingsite/items?f=html&limit=1000"
-    }
-  ],
+  "total": 82,
   "features": [
     {
       "type": "Feature",
@@ -578,6 +558,5 @@
       "geometry": { "type": "Point", "coordinates": [4.6963888921281, 52.48083333081744] },
       "id": "293d1185-6995-54a1-a735-777a94dbaab2"
     }
-  ],
-  "total": 82
+  ]
 }
