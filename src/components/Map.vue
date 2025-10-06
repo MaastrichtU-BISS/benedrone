@@ -6,6 +6,7 @@ import {
 } from '@/utils/ol-helpers';
 import type { NFZFeaturesCollection } from '@/utils/types';
 import 'ol/ol.css';
+import 'ol-layerswitcher/dist/ol-layerswitcher.css';
 
 const map = ref<Map | null>(null);
 // Be carefull since google maps uses [latitude, longitude]
@@ -22,16 +23,19 @@ onMounted(async () => {
     // add no fly zones
     const noFlyZones: NFZFeaturesCollection[] = [
         {
+            title: 'Landingsites',
             url: 'pdok/landingsite',
             borderColor: '#ff0000',
             fillColor: 'rgba(255,0,0,0.8)'
         },
         {
+            title: 'Luchtvaartgebieden',
             url: 'pdok/luchtvaartgebieden',
             borderColor: 'rgba(171, 137, 23, 0.6)',
             fillColor: 'rgba(242, 210, 87, 0.6)'
         },
         {
+            title: 'Luchtvaartgebieden zonder Natura 2000',
             url: 'pdok/luchtvaartgebieden-zonder-natura-2000',
             borderColor: 'rgba(31, 77, 39, 0.6)',
             fillColor: 'rgba(63, 145, 66, 0.6)'

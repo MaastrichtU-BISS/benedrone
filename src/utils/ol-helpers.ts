@@ -11,6 +11,9 @@ import { getCenter } from 'ol/extent'
 import { Feature } from 'ol'
 import { Geometry, LineString, Point, Polygon } from 'ol/geom'
 import type { NFZFeaturesCollection } from '@/utils/types'
+import LayerSwitcher from 'ol-layerswitcher'
+import type { BaseLayerOptions } from 'ol-layerswitcher'
+import { set } from 'ol/transform'
 
 export function createMap(
   target: string = 'map',
@@ -25,8 +28,9 @@ export function createMap(
   })
 
   // use OpenStreetMap as the map source
-  const mapSource = new Source.OSM()
-  const mapLayer = new Layer.Tile({ source: mapSource })
+  const mapLayer = new Layer.Tile({
+    source: new Source.OSM(),
+  })
 
   // create the map
   const map = new Map({
@@ -34,6 +38,14 @@ export function createMap(
     layers: [mapLayer],
     view,
   })
+
+  // add layer switcher
+  const layerSwitcher = new LayerSwitcher({
+    reverse: true,
+    activationMode: 'click',
+  })
+
+  map.addControl(layerSwitcher)
 
   return map
 }
@@ -50,7 +62,7 @@ export function addNoFlyZones(map: Map, nfzList: NFZFeaturesCollection[]): void 
 
     const noFlyZonesLayer = new Layer.Vector({
       source: noFlyZonesVector,
-      style: (feature) => {
+      style: (feature: Feature) => {
         const geomType = feature?.getGeometry()?.getType()
         if (geomType === 'Point') {
           return new Style({
@@ -70,7 +82,11 @@ export function addNoFlyZones(map: Map, nfzList: NFZFeaturesCollection[]): void 
           })
         }
       },
-    })
+    } as BaseLayerOptions)
+
+    noFlyZonesLayer.set('title', nfz.title || 'No Fly Zones')
+    noFlyZonesLayer.set('visible', true)
+    noFlyZonesLayer.set('type', 'overlay')
 
     // add no fly zones layers
     map.addLayer(noFlyZonesLayer)
