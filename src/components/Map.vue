@@ -4,6 +4,7 @@ import Map from 'ol/Map';
 import {
     createMap, addNfzOverlay, addNoFlyZones
 } from '@/utils/ol-helpers';
+import type { NFZFeaturesCollection } from '@/utils/types';
 import 'ol/ol.css';
 
 const map = ref<Map | null>(null);
@@ -19,11 +20,22 @@ onMounted(async () => {
     }
 
     // add no fly zones
-    const noFlyZones = [
-        'pdok/landingsite',
-        'pdok/luchtvaartgebieden',
-        'pdok/luchtvaartgebieden-zonder-natura-2000',
-        // 'rijksoverheid/open-category'
+    const noFlyZones: NFZFeaturesCollection[] = [
+        {
+            url: 'pdok/landingsite',
+            borderColor: '#ff0000',
+            fillColor: 'rgba(255,0,0,0.8)'
+        },
+        {
+            url: 'pdok/luchtvaartgebieden',
+            borderColor: 'rgba(171, 137, 23, 0.6)',
+            fillColor: 'rgba(242, 210, 87, 0.6)'
+        },
+        {
+            url: 'pdok/luchtvaartgebieden-zonder-natura-2000',
+            borderColor: 'rgba(31, 77, 39, 0.6)',
+            fillColor: 'rgba(63, 145, 66, 0.6)'
+        }
     ]
 
     addNoFlyZones(map.value as Map, noFlyZones);
