@@ -117,12 +117,7 @@ export function addNfzOverlay(map: Map, elementId: string): void {
     if (clickedFeature instanceof Feature) {
       const geometry = clickedFeature?.getGeometry()
 
-      let coords = undefined
-      if (geometry instanceof Point) {
-        coords = geometry.getCoordinates() as Coordinate
-      } else if (geometry instanceof Polygon || geometry instanceof LineString) {
-        coords = getCenter(geometry.getExtent())
-      }
+      let coords = evt.coordinate
 
       const props = clickedFeature.getProperties()
 
