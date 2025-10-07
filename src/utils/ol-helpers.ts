@@ -41,7 +41,7 @@ export function createMap(
 
   // add layer switcher
   const layerSwitcher = new LayerSwitcher({
-    reverse: true,
+    reverse: false,
     activationMode: 'click',
   })
 

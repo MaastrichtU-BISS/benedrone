@@ -35,8 +35,8 @@ onMounted(async () => {
             fillColor: 'rgba(242, 210, 87, 0.6)'
         },
         {
-            title: 'Luchtvaartgebieden zonder Natura 2000',
-            url: 'pdok/luchtvaartgebieden-zonder-natura-2000',
+            title: 'Natura 2000',
+            url: 'pdok/natura-2000',
             borderColor: 'rgba(31, 77, 39, 0.6)',
             fillColor: 'rgba(63, 145, 66, 0.6)'
         }
