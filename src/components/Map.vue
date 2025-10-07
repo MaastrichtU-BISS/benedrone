@@ -25,21 +25,27 @@ onMounted(async () => {
         {
             title: 'Landingsites',
             url: 'pdok/landingsite',
-            borderColor: '#ff0000',
-            fillColor: 'rgba(255,0,0,0.8)'
+            borderColor: 'rgba(255,0,0,0.9)',
+            fillColor: 'rgba(255,0,0,0.7)'
         },
         {
             title: 'Luchtvaartgebieden',
             url: 'pdok/luchtvaartgebieden',
-            borderColor: 'rgba(171, 137, 23, 0.6)',
+            borderColor: 'rgba(171, 137, 23, 0.9)',
             fillColor: 'rgba(242, 210, 87, 0.6)'
         },
         {
             title: 'Natura 2000',
             url: 'pdok/natura-2000',
-            borderColor: 'rgba(31, 77, 39, 0.6)',
+            borderColor: 'rgba(31, 77, 39, 0.9)',
             fillColor: 'rgba(63, 145, 66, 0.6)'
-        }
+        },
+        // {
+        //     title: 'Rijksoverheid',
+        //     url: 'rijksoverheid/open-category',
+        //     borderColor: 'rgba(30, 60, 130, 0.9)',
+        //     fillColor: 'rgba(102, 163, 255, 0.6)'
+        // }
     ]
 
     addNoFlyZones(map.value as Map, noFlyZones);
