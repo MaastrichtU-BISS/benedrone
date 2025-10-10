@@ -4,14 +4,14 @@ import Map from 'ol/Map';
 import {
     createMap, addControlLayerSwitcher, addControlGeocoder, addNfzOverlay, addNoFlyZones
 } from '@/utils/ol-helpers';
-import type { NFZFeaturesCollection } from '@/types';
+import type { NFZDataset } from '@/types';
 // styles
 import 'ol/ol.css';
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
 import 'ol-geocoder/dist/ol-geocoder.css';
 
 const map = ref<Map | null>(null);
-// Be carefull since google maps uses [latitude, longitude]
+// Google maps uses [latitude, longitude]
 const BRIGHTLANDS_CAMPUS_COORDS = [5.97311012907296, 50.883308586237696]; // [longitude, latitude]
 
 onMounted(async () => {
@@ -26,34 +26,11 @@ onMounted(async () => {
     addControlLayerSwitcher(map.value as Map);
     addControlGeocoder(map.value as Map);
 
-    // add no fly zones
-    const noFlyZones: NFZFeaturesCollection[] = [
-        {
-            title: 'Landingsites',
-            url: 'pdok/landingsite',
-            borderColor: 'rgba(255,0,0,0.9)',
-            fillColor: 'rgba(255,0,0,0.7)'
-        },
-        {
-            title: 'Luchtvaartgebieden',
-            url: 'pdok/luchtvaartgebieden',
-            borderColor: 'rgba(171, 137, 23, 0.9)',
-            fillColor: 'rgba(242, 210, 87, 0.6)'
-        },
-        {
-            title: 'Natura 2000',
-            url: 'pdok/natura-2000',
-            borderColor: 'rgba(31, 77, 39, 0.9)',
-            fillColor: 'rgba(63, 145, 66, 0.6)'
-        },
-        // {
-        //     title: 'Rijksoverheid',
-        //     url: 'rijksoverheid/open-category',
-        //     borderColor: 'rgba(30, 60, 130, 0.9)',
-        //     fillColor: 'rgba(102, 163, 255, 0.6)'
-        // }
-    ]
-    addNoFlyZones(map.value as Map, noFlyZones);
+    // add no-fly zones
+    const json = await fetch('/data/nfz/index.json');
+    const data = await json.json();
+    const NFZdatasets: NFZDataset[] = data.datasets;
+    addNoFlyZones(map.value as Map, NFZdatasets);
 
     // add info tooltip to nfz when clicked
     addNfzOverlay(map.value as Map, 'overlayPopup');
