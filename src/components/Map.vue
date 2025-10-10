@@ -4,7 +4,7 @@ import Map from 'ol/Map';
 import {
     createMap, addControlLayerSwitcher, addControlGeocoder, addNfzOverlay, addNoFlyZones
 } from '@/utils/ol-helpers';
-import type { NFZFeaturesCollection } from '@/utils/types';
+import type { NFZFeaturesCollection } from '@/types';
 // styles
 import 'ol/ol.css';
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
