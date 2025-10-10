@@ -122,7 +122,7 @@ export function addNoFlyZones(map: Map, datasets: NFZDataset[]): void {
     })
 
     const groupLayer = new Layer.Group({
-      title: dataset.title,
+      title: `${dataset.title} <a class="dataset-link" href="${dataset.url}" target="_blank" rel="noopener noreferrer"></a>`,
       layers,
     } as GroupLayerOptions)
 

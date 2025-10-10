@@ -12,3 +12,14 @@
   border-radius: 50%;
   vertical-align: middle;
 }
+
+.dataset-link {
+  text-decoration: none;
+}
+
+.dataset-link::after {
+  content: "↗";
+  font-size: 0.5em;
+  margin-left: 5px;
+  color: blue
+}
