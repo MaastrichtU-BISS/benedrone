@@ -1,0 +1,14 @@
+.layer-switcher li input {
+    height: 1.4em !important;
+}
+
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  border-radius: 3px;
+  border: 1px solid;
+  border-radius: 50%;
+  vertical-align: middle;
+}

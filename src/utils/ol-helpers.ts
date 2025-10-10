@@ -45,7 +45,7 @@ export function addControlLayerSwitcher(map: Map): void {
   const layerSwitcher = new LayerSwitcher({
     reverse: false,
     activationMode: 'click',
-    groupSelectStyle: 'children'
+    groupSelectStyle: 'children',
   })
 
   map.addControl(layerSwitcher)
@@ -75,9 +75,8 @@ export function addControlGeocoder(map: Map): void {
 //#endregion
 
 export function addNoFlyZones(map: Map, datasets: NFZDataset[]): void {
-  
   datasets.forEach((dataset) => {
-    let layers: BaseLayerOptions[] = [];
+    let layers: BaseLayerOptions[] = []
 
     dataset.files.forEach((nfz) => {
       const noFlyZonesVector = new Source.Vector({
@@ -112,7 +111,10 @@ export function addNoFlyZones(map: Map, datasets: NFZDataset[]): void {
         },
       } as BaseLayerOptions)
 
-      noFlyZonesLayer.set('title', nfz.title)
+      noFlyZonesLayer.set(
+        'title',
+        `<span class="swatch" style="background-color: ${nfz.fillColor}; border-color: ${nfz.borderColor}"></span>${nfz.title}`,
+      )
       noFlyZonesLayer.set('visible', nfz.visible)
       noFlyZonesLayer.set('type', 'overlay')
 
