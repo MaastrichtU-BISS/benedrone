@@ -57,7 +57,7 @@ export function addControlGeocoder(map: Map): void {
     placeholder: 'Search for ...',
     targetType: 'glass-button',
     limit: 5,
-    keepOpen: false,
+    keepOpen: true,
     preventMarker: false
   })
 
