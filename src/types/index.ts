@@ -1,7 +1,16 @@
 export type NFZFeaturesCollection = {
-  title?: string
-  total?: number
+  title: string
+  description?: string
   url: string
   borderColor?: string
   fillColor?: string
+  visible?: boolean
+}
+
+export type NFZDataset = {
+  title: string,
+  description?: string,
+  url: string,
+  format: string,
+  files: NFZFeaturesCollection[]
 }
