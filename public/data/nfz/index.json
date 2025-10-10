@@ -9,8 +9,8 @@
         {
           "title": "Landingsites",
           "url": "pdok/landingsite",
-          "borderColor": "rgba(255,0,0,0.9)",
-          "fillColor": "rgba(255,0,0,0.7)",
+          "borderColor": "rgba(180, 30, 30, 0.9)",
+          "fillColor": "rgba(255, 128, 128, 0.6)",
           "visible": true
         },
         {
@@ -67,8 +67,8 @@
         {
           "title": "Navaids",
           "url": "openaip/nl/nav",
-          "borderColor": "rgba(199, 21, 133, 0.9)",
-          "fillColor": "rgba(255, 182, 193, 0.6)",
+          "borderColor": "rgba(64, 72, 57, 0.9)",
+          "fillColor": "rgba(120, 134, 107, 0.6)",
           "visible": true
         },
         {
@@ -81,15 +81,15 @@
         {
           "title": "Reporting Points",
           "url": "openaip/nl/rpp",
-          "borderColor": "rgba(90, 40, 160, 0.9)",
-          "fillColor": "rgba(186, 140, 255, 0.6)",
+          "borderColor": "rgba(128, 179, 0, 0.9)",
+          "fillColor": "rgba(204, 255, 102, 0.6)",
           "visible": true
         },
         {
           "title": "Obstacles",
           "url": "openaip/nl/obs",
-          "borderColor": "rgba(90, 90, 90, 0.9)",
-          "fillColor": "rgba(200, 200, 200, 0.6)",
+          "borderColor": "rgba(204, 102, 0, 0.9)",
+          "fillColor": "rgba(255, 179, 71, 0.6)",
           "visible": true
         },
         {
