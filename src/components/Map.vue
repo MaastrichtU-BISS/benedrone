@@ -2,11 +2,13 @@
 import { onMounted, ref } from 'vue';
 import Map from 'ol/Map';
 import {
-    createMap, addNfzOverlay, addNoFlyZones
+    createMap, addControlLayerSwitcher, addControlGeocoder, addNfzOverlay, addNoFlyZones
 } from '@/utils/ol-helpers';
 import type { NFZFeaturesCollection } from '@/utils/types';
+// styles
 import 'ol/ol.css';
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
+import 'ol-geocoder/dist/ol-geocoder.css';
 
 const map = ref<Map | null>(null);
 // Be carefull since google maps uses [latitude, longitude]
@@ -16,9 +18,13 @@ onMounted(async () => {
     // create map
     map.value = createMap('map', BRIGHTLANDS_CAMPUS_COORDS, 16);
 
-    if (!map) {
+    if (!map?.value) {
         throw new Error('Invalid Map')
     }
+
+    // add map controls
+    addControlLayerSwitcher(map.value as Map);
+    addControlGeocoder(map.value as Map);
 
     // add no fly zones
     const noFlyZones: NFZFeaturesCollection[] = [
@@ -47,7 +53,6 @@ onMounted(async () => {
         //     fillColor: 'rgba(102, 163, 255, 0.6)'
         // }
     ]
-
     addNoFlyZones(map.value as Map, noFlyZones);
 
     // add info tooltip to nfz when clicked

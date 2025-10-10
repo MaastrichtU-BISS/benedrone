@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "ol": "^10.6.1",
+    "ol-geocoder": "^4.3.3",
     "ol-layerswitcher": "^4.1.2",
     "vue": "^3.5.18"
   },

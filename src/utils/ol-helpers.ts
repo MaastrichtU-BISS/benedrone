@@ -6,14 +6,12 @@ import GeoJSON from 'ol/format/GeoJSON'
 import { Style, Stroke, Fill, Circle } from 'ol/style'
 import Overlay from 'ol/Overlay'
 import type { Coordinate } from 'ol/coordinate'
-import { fromLonLat, get } from 'ol/proj'
-import { getCenter } from 'ol/extent'
+import { fromLonLat } from 'ol/proj'
 import { Feature } from 'ol'
-import { Geometry, LineString, Point, Polygon } from 'ol/geom'
 import type { NFZFeaturesCollection } from '@/utils/types'
 import LayerSwitcher from 'ol-layerswitcher'
 import type { BaseLayerOptions } from 'ol-layerswitcher'
-import { set } from 'ol/transform'
+import Geocoder from 'ol-geocoder/dist/ol-geocoder'
 
 export function createMap(
   target: string = 'map',
@@ -39,16 +37,41 @@ export function createMap(
     view,
   })
 
-  // add layer switcher
+  return map
+}
+
+//#region Controls
+export function addControlLayerSwitcher(map: Map): void {
   const layerSwitcher = new LayerSwitcher({
     reverse: false,
     activationMode: 'click',
   })
 
   map.addControl(layerSwitcher)
-
-  return map
 }
+
+export function addControlGeocoder(map: Map): void {
+  const geocoder = new Geocoder('nominatim', {
+    provider: 'osm',
+    lang: 'en-US',
+    placeholder: 'Search for ...',
+    targetType: 'glass-button',
+    limit: 5,
+    keepOpen: false,
+    preventMarker: false
+  })
+
+  geocoder.on('addresschosen', (evt: any) => {
+    const feature = evt.feature,
+      coord = evt.coordinate,
+      address = evt.address
+    feature.setProperties({ name: address.original.formatted });
+    // action to be taken
+  })
+
+  map.addControl(geocoder)
+}
+//#endregion
 
 export function addNoFlyZones(map: Map, nfzList: NFZFeaturesCollection[]): void {
   nfzList.forEach((nfz) => {
@@ -115,14 +138,12 @@ export function addNfzOverlay(map: Map, elementId: string): void {
     let clickedFeature = map.forEachFeatureAtPixel(evt.pixel, (feature) => feature)
 
     if (clickedFeature instanceof Feature) {
-      const geometry = clickedFeature?.getGeometry()
-
       let coords = evt.coordinate
 
       const props = clickedFeature.getProperties()
 
       const nameEle = document.createElement('b')
-      nameEle.innerText = props.txtname ?? props.source_txt ?? 'No name'
+      nameEle.innerText = props.name || props.txtname || props.source_txt || 'No name'
 
       popupElement.appendChild(nameEle)
 
