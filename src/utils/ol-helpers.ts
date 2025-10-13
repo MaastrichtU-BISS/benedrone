@@ -5,23 +5,24 @@ import * as Layer from 'ol/layer'
 import GeoJSON from 'ol/format/GeoJSON'
 import { Style, Stroke, Fill, Circle } from 'ol/style'
 import Overlay from 'ol/Overlay'
-import type { Coordinate } from 'ol/coordinate'
-import { fromLonLat } from 'ol/proj'
+import { getCenter, type Extent } from 'ol/extent'
 import { Feature } from 'ol'
 import type { NFZDataset } from '@/types'
 import LayerSwitcher from 'ol-layerswitcher'
 import type { BaseLayerOptions, GroupLayerOptions } from 'ol-layerswitcher'
 import Geocoder from 'ol-geocoder/dist/ol-geocoder'
+import type { Coordinate } from 'ol/coordinate'
 
-export function createMap(
-  target: string = 'map',
-  center: Coordinate = [0, 0],
-  zoom: number = 2,
-): Map {
+export function createMap(extent: Extent, center: Coordinate | null = null): Map {
   // focus the map view on the center
+
   const view = new View({
-    center,
-    zoom,
+    projection: 'EPSG:3857',
+    extent,
+    center: center || getCenter(extent),
+    zoom: 8,
+    minZoom: 8,
+    maxZoom: 20,
   })
 
   // use OpenStreetMap as the map source
@@ -31,7 +32,7 @@ export function createMap(
 
   // create the map
   const map = new Map({
-    target,
+    target: 'map',
     layers: [mapLayer],
     view,
   })

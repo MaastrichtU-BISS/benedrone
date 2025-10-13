@@ -11,12 +11,16 @@ import 'ol-layerswitcher/dist/ol-layerswitcher.css';
 import 'ol-geocoder/dist/ol-geocoder.css';
 
 const map = ref<Map | null>(null);
-// Google maps uses [latitude, longitude]
-const NL_BE_CENTER = [572008.325474334, 6804166.123039424]; // [longitude, latitude]
+const extentBeneluxSea = [
+    166979, // west
+    6314200, // south
+    1000579, // east
+    7500000, //north
+]
 
 onMounted(async () => {
     // create map
-    map.value = createMap('map', NL_BE_CENTER, 7.5);
+    map.value = createMap(extentBeneluxSea);
 
     if (!map?.value) {
         throw new Error('Invalid Map')
