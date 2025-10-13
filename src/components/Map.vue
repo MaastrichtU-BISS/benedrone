@@ -12,11 +12,11 @@ import 'ol-geocoder/dist/ol-geocoder.css';
 
 const map = ref<Map | null>(null);
 // Google maps uses [latitude, longitude]
-const BRIGHTLANDS_CAMPUS_COORDS = [5.97311012907296, 50.883308586237696]; // [longitude, latitude]
+const NL_BE_CENTER = [572008.325474334, 6804166.123039424]; // [longitude, latitude]
 
 onMounted(async () => {
     // create map
-    map.value = createMap('map', BRIGHTLANDS_CAMPUS_COORDS, 16);
+    map.value = createMap('map', NL_BE_CENTER, 7.5);
 
     if (!map?.value) {
         throw new Error('Invalid Map')

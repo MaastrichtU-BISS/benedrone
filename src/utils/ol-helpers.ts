@@ -18,10 +18,9 @@ export function createMap(
   center: Coordinate = [0, 0],
   zoom: number = 2,
 ): Map {
-  // the default projection is Spherical Mercator (EPSG:3857), with meters as map units.
-  // so we need to transform the coordinates from longitude/latitude to map projection
+  // focus the map view on the center
   const view = new View({
-    center: fromLonLat(center),
+    center,
     zoom,
   })
 
@@ -154,6 +153,7 @@ export function addNfzOverlay(map: Map, elementId: string): void {
 
     if (clickedFeature instanceof Feature) {
       let coords = evt.coordinate
+      console.log(coords)
 
       const props = clickedFeature.getProperties()
 
