@@ -8,9 +8,13 @@ export type NFZFeaturesCollection = {
 }
 
 export type NFZDataset = {
-  title: string,
-  description?: string,
-  url: string,
-  format: string,
-  files: NFZFeaturesCollection[]
+  title: string
+  description?: string
+  url: string
+  format: string
+  countries: {
+    code: string
+    url?: string
+    files: NFZFeaturesCollection[]
+  }[]
 }

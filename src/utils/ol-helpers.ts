@@ -64,7 +64,7 @@ export function addControlGeocoder(map: Map): void {
 
   geocoder.on('addresschosen', (evt: any) => {
     const feature = evt.feature,
-      coord = evt.coordinate,
+      // coord = evt.coordinate,
       address = evt.address
     feature.setProperties({ name: address.original.formatted })
     // action to be taken
@@ -76,57 +76,58 @@ export function addControlGeocoder(map: Map): void {
 
 export function addNoFlyZones(map: Map, datasets: NFZDataset[]): void {
   datasets.forEach((dataset) => {
-    let layers: BaseLayerOptions[] = []
+    dataset.countries.forEach((country) => {
+      let layers: BaseLayerOptions[] = []
+      country.files.forEach((nfz) => {
+        const noFlyZonesVector = new Source.Vector({
+          url: `data/nfz/${nfz.url}.${dataset.format}`,
+          format: new GeoJSON({
+            dataProjection: 'EPSG:4326', // most GeoJSON is lon/lat
+            featureProjection: 'EPSG:3857', // map projection
+          }),
+        })
 
-    dataset.files.forEach((nfz) => {
-      const noFlyZonesVector = new Source.Vector({
-        url: `data/nfz/${nfz.url}.${dataset.format}`,
-        format: new GeoJSON({
-          dataProjection: 'EPSG:4326', // most GeoJSON is lon/lat
-          featureProjection: 'EPSG:3857', // map projection
-        }),
+        const noFlyZonesLayer = new Layer.Vector({
+          source: noFlyZonesVector,
+          style: (feature: Feature) => {
+            const geomType = feature?.getGeometry()?.getType()
+            if (geomType === 'Point') {
+              return new Style({
+                image: new Circle({
+                  radius: 6,
+                  fill: new Fill({ color: nfz.fillColor }),
+                  stroke: new Stroke({ color: nfz.borderColor, width: 2 }),
+                }),
+              })
+            } else {
+              return new Style({
+                fill: new Fill({ color: nfz.fillColor }),
+                stroke: new Stroke({
+                  color: nfz.borderColor,
+                  width: 1,
+                }),
+              })
+            }
+          },
+        } as BaseLayerOptions)
+
+        noFlyZonesLayer.set(
+          'title',
+          `<span class="swatch" style="background-color: ${nfz.fillColor}; border-color: ${nfz.borderColor}"></span>${nfz.title}`,
+        )
+        noFlyZonesLayer.set('visible', nfz.visible)
+        noFlyZonesLayer.set('type', 'overlay')
+
+        layers.push(noFlyZonesLayer as BaseLayerOptions)
       })
 
-      const noFlyZonesLayer = new Layer.Vector({
-        source: noFlyZonesVector,
-        style: (feature: Feature) => {
-          const geomType = feature?.getGeometry()?.getType()
-          if (geomType === 'Point') {
-            return new Style({
-              image: new Circle({
-                radius: 6,
-                fill: new Fill({ color: nfz.fillColor }),
-                stroke: new Stroke({ color: nfz.borderColor, width: 2 }),
-              }),
-            })
-          } else {
-            return new Style({
-              fill: new Fill({ color: nfz.fillColor }),
-              stroke: new Stroke({
-                color: nfz.borderColor,
-                width: 1,
-              }),
-            })
-          }
-        },
-      } as BaseLayerOptions)
+      const groupLayer = new Layer.Group({
+        title: `${dataset.title} (${country.code}) <a class="dataset-link" href="${country.url || dataset.url}" target="_blank" rel="noopener noreferrer"></a>`,
+        layers,
+      } as GroupLayerOptions)
 
-      noFlyZonesLayer.set(
-        'title',
-        `<span class="swatch" style="background-color: ${nfz.fillColor}; border-color: ${nfz.borderColor}"></span>${nfz.title}`,
-      )
-      noFlyZonesLayer.set('visible', nfz.visible)
-      noFlyZonesLayer.set('type', 'overlay')
-
-      layers.push(noFlyZonesLayer as BaseLayerOptions)
+      map.addLayer(groupLayer)
     })
-
-    const groupLayer = new Layer.Group({
-      title: `${dataset.title} <a class="dataset-link" href="${dataset.url}" target="_blank" rel="noopener noreferrer"></a>`,
-      layers,
-    } as GroupLayerOptions)
-
-    map.addLayer(groupLayer)
   })
 }
 

@@ -5,27 +5,32 @@
       "description": "Drone no-fly zones. Recreational drone pilots must also adhere to these no-fly zones. Signs showing where drones are permitted and prohibited are visible, even down to street level. Relevant information about regulations can be found at https://rijksoverheid.nl/drones.",
       "url": "https://api.pdok.nl/lvnl/drone-no-flyzones/ogc/v1/collections",
       "format": "geojson",
-      "files": [
+      "countries": [
         {
-          "title": "Landingsites",
-          "url": "pdok/landingsite",
-          "borderColor": "rgba(180, 30, 30, 0.9)",
-          "fillColor": "rgba(255, 128, 128, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Luchtvaartgebieden",
-          "url": "pdok/luchtvaartgebieden",
-          "borderColor": "rgba(171, 137, 23, 0.9)",
-          "fillColor": "rgba(242, 210, 87, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Natura 2000",
-          "url": "pdok/natura-2000",
-          "borderColor": "rgba(31, 77, 39, 0.9)",
-          "fillColor": "rgba(63, 145, 66, 0.6)",
-          "visible": true
+          "code": "NL",
+          "files": [
+            {
+              "title": "Landingsites",
+              "url": "pdok/landingsite",
+              "borderColor": "rgba(180, 30, 30, 0.9)",
+              "fillColor": "rgba(255, 128, 128, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Luchtvaartgebieden",
+              "url": "pdok/luchtvaartgebieden",
+              "borderColor": "rgba(171, 137, 23, 0.9)",
+              "fillColor": "rgba(242, 210, 87, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Natura 2000",
+              "url": "pdok/natura-2000",
+              "borderColor": "rgba(31, 77, 39, 0.9)",
+              "fillColor": "rgba(63, 145, 66, 0.6)",
+              "visible": true
+            }
+          ]
         }
       ]
     },
@@ -34,141 +39,150 @@
       "description": "No-fly zones for the open category in the Netherlands on the GoDrone  and  Aeret Map Viewer flight maps",
       "url": "https://www.rijksoverheid.nl/onderwerpen/drone/vraag-en-antwoord/waar-mag-ik-vliegen-met-een-drone",
       "format": "geojson",
-      "files": [
+      "countries": [
         {
-          "title": "Open Category",
-          "url": "rijksoverheid/open-category",
-          "borderColor": "rgba(30, 60, 130, 0.9)",
-          "fillColor": "rgba(102, 163, 255, 0.6)",
-          "visible": false
+          "code": "NL",
+          "files": [
+            {
+              "title": "Open Category",
+              "url": "rijksoverheid/open-category",
+              "borderColor": "rgba(30, 60, 130, 0.9)",
+              "fillColor": "rgba(102, 163, 255, 0.6)",
+              "visible": false
+            }
+          ]
         }
       ]
     },
     {
-      "title": "OpenAIP Netherlands",
+      "title": "OpenAIP",
       "description": "The openaip platform provides current and precise worldwide aeronautical data. Based on contributions from a vibrant community of aviation enthusiasts. Free to use for anyone. Developer tools and API available.",
-      "url": "https://www.openaip.net/data/exports?page=1&limit=200&sortBy=country&sortDesc=true&failed=false&country=NL&format=geojson",
+      "url": "https://www.openaip.net",
       "format": "geojson",
-      "files": [
+      "countries": [
         {
-          "title": "Airports",
-          "url": "openaip/nl/apt",
-          "borderColor": "rgba(90, 40, 160, 0.9)",
-          "fillColor": "rgba(180, 130, 255, 0.6)",
-          "visible": true
+          "code": "NL",
+          "url": "https://www.openaip.net/data/exports?page=1&limit=200&sortBy=country&sortDesc=true&failed=false&country=NL&format=geojson",
+          "files": [
+            {
+              "title": "Airports",
+              "url": "openaip/nl/apt",
+              "borderColor": "rgba(90, 40, 160, 0.9)",
+              "fillColor": "rgba(180, 130, 255, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Airspaces",
+              "url": "openaip/nl/asp",
+              "borderColor": "rgba(255,165,0,0.9)",
+              "fillColor": "rgba(255,165,0,0.3)",
+              "visible": false
+            },
+            {
+              "title": "Navaids",
+              "url": "openaip/nl/nav",
+              "borderColor": "rgba(64, 72, 57, 0.9)",
+              "fillColor": "rgba(120, 134, 107, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Hotspots",
+              "url": "openaip/nl/hot",
+              "borderColor": "rgba(180, 30, 30, 0.9)",
+              "fillColor": "rgba(255, 128, 128, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Reporting Points",
+              "url": "openaip/nl/rpp",
+              "borderColor": "rgba(128, 179, 0, 0.9)",
+              "fillColor": "rgba(204, 255, 102, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Obstacles",
+              "url": "openaip/nl/obs",
+              "borderColor": "rgba(204, 102, 0, 0.9)",
+              "fillColor": "rgba(255, 179, 71, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "RC Airfields",
+              "url": "openaip/nl/rca",
+              "borderColor": "rgba(0, 128, 128, 0.9)",
+              "fillColor": "rgba(102, 255, 255, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "RC Airfield Airspaces",
+              "url": "openaip/nl/raa",
+              "borderColor": "rgba(0, 128, 128, 0.9)",
+              "fillColor": "rgba(102, 255, 255, 0.6)",
+              "visible": true
+            }
+          ]
         },
         {
-          "title": "Airspaces",
-          "url": "openaip/nl/asp",
-          "borderColor": "rgba(255,165,0,0.9)",
-          "fillColor": "rgba(255,165,0,0.3)",
-          "visible": false
-        },
-        {
-          "title": "Navaids",
-          "url": "openaip/nl/nav",
-          "borderColor": "rgba(64, 72, 57, 0.9)",
-          "fillColor": "rgba(120, 134, 107, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Hotspots",
-          "url": "openaip/nl/hot",
-          "borderColor": "rgba(180, 30, 30, 0.9)",
-          "fillColor": "rgba(255, 128, 128, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Reporting Points",
-          "url": "openaip/nl/rpp",
-          "borderColor": "rgba(128, 179, 0, 0.9)",
-          "fillColor": "rgba(204, 255, 102, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Obstacles",
-          "url": "openaip/nl/obs",
-          "borderColor": "rgba(204, 102, 0, 0.9)",
-          "fillColor": "rgba(255, 179, 71, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "RC Airfields",
-          "url": "openaip/nl/rca",
-          "borderColor": "rgba(0, 128, 128, 0.9)",
-          "fillColor": "rgba(102, 255, 255, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "RC Airfield Airspaces",
-          "url": "openaip/nl/raa",
-          "borderColor": "rgba(0, 128, 128, 0.9)",
-          "fillColor": "rgba(102, 255, 255, 0.6)",
-          "visible": true
-        }
-      ]
-    },
-    {
-      "title": "OpenAIP Belgium",
-      "description": "The openaip platform provides current and precise worldwide aeronautical data. Based on contributions from a vibrant community of aviation enthusiasts. Free to use for anyone. Developer tools and API available.",
-      "url": "https://www.openaip.net/data/exports?page=1&limit=200&sortBy=country&sortDesc=true&failed=false&country=BE&format=geojson",
-      "format": "geojson",
-      "files": [
-        {
-          "title": "Airports",
-          "url": "openaip/be/apt",
-          "borderColor": "rgba(90, 40, 160, 0.9)",
-          "fillColor": "rgba(180, 130, 255, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Airspaces",
-          "url": "openaip/be/asp",
-          "borderColor": "rgba(255,165,0,0.9)",
-          "fillColor": "rgba(255,165,0,0.3)",
-          "visible": false
-        },
-        {
-          "title": "Navaids",
-          "url": "openaip/be/nav",
-          "borderColor": "rgba(64, 72, 57, 0.9)",
-          "fillColor": "rgba(120, 134, 107, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Hotspots",
-          "url": "openaip/be/hot",
-          "borderColor": "rgba(180, 30, 30, 0.9)",
-          "fillColor": "rgba(255, 128, 128, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Reporting Points",
-          "url": "openaip/be/rpp",
-          "borderColor": "rgba(128, 179, 0, 0.9)",
-          "fillColor": "rgba(204, 255, 102, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "Obstacles",
-          "url": "openaip/be/obs",
-          "borderColor": "rgba(204, 102, 0, 0.9)",
-          "fillColor": "rgba(255, 179, 71, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "RC Airfields",
-          "url": "openaip/be/rca",
-          "borderColor": "rgba(0, 128, 128, 0.9)",
-          "fillColor": "rgba(102, 255, 255, 0.6)",
-          "visible": true
-        },
-        {
-          "title": "RC Airfield Airspaces",
-          "url": "openaip/be/raa",
-          "borderColor": "rgba(0, 128, 128, 0.9)",
-          "fillColor": "rgba(102, 255, 255, 0.6)",
-          "visible": true
+          "code": "BE",
+          "url": "https://www.openaip.net/data/exports?page=1&limit=200&sortBy=country&sortDesc=true&failed=false&country=BE&format=geojson",
+          "files": [
+            {
+              "title": "Airports",
+              "url": "openaip/be/apt",
+              "borderColor": "rgba(90, 40, 160, 0.9)",
+              "fillColor": "rgba(180, 130, 255, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Airspaces",
+              "url": "openaip/be/asp",
+              "borderColor": "rgba(255,165,0,0.9)",
+              "fillColor": "rgba(255,165,0,0.3)",
+              "visible": false
+            },
+            {
+              "title": "Navaids",
+              "url": "openaip/be/nav",
+              "borderColor": "rgba(64, 72, 57, 0.9)",
+              "fillColor": "rgba(120, 134, 107, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Hotspots",
+              "url": "openaip/be/hot",
+              "borderColor": "rgba(180, 30, 30, 0.9)",
+              "fillColor": "rgba(255, 128, 128, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Reporting Points",
+              "url": "openaip/be/rpp",
+              "borderColor": "rgba(128, 179, 0, 0.9)",
+              "fillColor": "rgba(204, 255, 102, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "Obstacles",
+              "url": "openaip/be/obs",
+              "borderColor": "rgba(204, 102, 0, 0.9)",
+              "fillColor": "rgba(255, 179, 71, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "RC Airfields",
+              "url": "openaip/be/rca",
+              "borderColor": "rgba(0, 128, 128, 0.9)",
+              "fillColor": "rgba(102, 255, 255, 0.6)",
+              "visible": true
+            },
+            {
+              "title": "RC Airfield Airspaces",
+              "url": "openaip/be/raa",
+              "borderColor": "rgba(0, 128, 128, 0.9)",
+              "fillColor": "rgba(102, 255, 255, 0.6)",
+              "visible": true
+            }
+          ]
         }
       ]
     }
