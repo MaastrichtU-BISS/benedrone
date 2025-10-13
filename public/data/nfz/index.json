@@ -45,7 +45,7 @@
       ]
     },
     {
-      "title": "OpenAIP",
+      "title": "OpenAIP Netherlands",
       "description": "The openaip platform provides current and precise worldwide aeronautical data. Based on contributions from a vibrant community of aviation enthusiasts. Free to use for anyone. Developer tools and API available.",
       "url": "https://www.openaip.net/data/exports?page=1&limit=200&sortBy=country&sortDesc=true&failed=false&country=NL&format=geojson",
       "format": "geojson",
@@ -102,6 +102,70 @@
         {
           "title": "RC Airfield Airspaces",
           "url": "openaip/nl/raa",
+          "borderColor": "rgba(0, 128, 128, 0.9)",
+          "fillColor": "rgba(102, 255, 255, 0.6)",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "title": "OpenAIP Belgium",
+      "description": "The openaip platform provides current and precise worldwide aeronautical data. Based on contributions from a vibrant community of aviation enthusiasts. Free to use for anyone. Developer tools and API available.",
+      "url": "https://www.openaip.net/data/exports?page=1&limit=200&sortBy=country&sortDesc=true&failed=false&country=BE&format=geojson",
+      "format": "geojson",
+      "files": [
+        {
+          "title": "Airports",
+          "url": "openaip/be/apt",
+          "borderColor": "rgba(90, 40, 160, 0.9)",
+          "fillColor": "rgba(180, 130, 255, 0.6)",
+          "visible": true
+        },
+        {
+          "title": "Airspaces",
+          "url": "openaip/be/asp",
+          "borderColor": "rgba(255,165,0,0.9)",
+          "fillColor": "rgba(255,165,0,0.3)",
+          "visible": false
+        },
+        {
+          "title": "Navaids",
+          "url": "openaip/be/nav",
+          "borderColor": "rgba(64, 72, 57, 0.9)",
+          "fillColor": "rgba(120, 134, 107, 0.6)",
+          "visible": true
+        },
+        {
+          "title": "Hotspots",
+          "url": "openaip/be/hot",
+          "borderColor": "rgba(180, 30, 30, 0.9)",
+          "fillColor": "rgba(255, 128, 128, 0.6)",
+          "visible": true
+        },
+        {
+          "title": "Reporting Points",
+          "url": "openaip/be/rpp",
+          "borderColor": "rgba(128, 179, 0, 0.9)",
+          "fillColor": "rgba(204, 255, 102, 0.6)",
+          "visible": true
+        },
+        {
+          "title": "Obstacles",
+          "url": "openaip/be/obs",
+          "borderColor": "rgba(204, 102, 0, 0.9)",
+          "fillColor": "rgba(255, 179, 71, 0.6)",
+          "visible": true
+        },
+        {
+          "title": "RC Airfields",
+          "url": "openaip/be/rca",
+          "borderColor": "rgba(0, 128, 128, 0.9)",
+          "fillColor": "rgba(102, 255, 255, 0.6)",
+          "visible": true
+        },
+        {
+          "title": "RC Airfield Airspaces",
+          "url": "openaip/be/raa",
           "borderColor": "rgba(0, 128, 128, 0.9)",
           "fillColor": "rgba(102, 255, 255, 0.6)",
           "visible": true
