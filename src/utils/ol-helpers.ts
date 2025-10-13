@@ -45,6 +45,7 @@ export function addControlLayerSwitcher(map: Map): void {
     reverse: false,
     activationMode: 'click',
     groupSelectStyle: 'children',
+    startActive: true,
   })
 
   map.addControl(layerSwitcher)
@@ -153,7 +154,6 @@ export function addNfzOverlay(map: Map, elementId: string): void {
 
     if (clickedFeature instanceof Feature) {
       let coords = evt.coordinate
-      console.log(coords)
 
       const props = clickedFeature.getProperties()
 

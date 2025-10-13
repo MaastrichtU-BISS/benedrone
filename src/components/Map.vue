@@ -22,15 +22,15 @@ onMounted(async () => {
         throw new Error('Invalid Map')
     }
 
-    // add map controls
-    addControlLayerSwitcher(map.value as Map);
-    addControlGeocoder(map.value as Map);
-
     // add no-fly zones
     const json = await fetch('/data/nfz/index.json');
     const data = await json.json();
     const NFZdatasets: NFZDataset[] = data.datasets;
     addNoFlyZones(map.value as Map, NFZdatasets);
+
+    // add map controls
+    addControlLayerSwitcher(map.value as Map);
+    addControlGeocoder(map.value as Map);
 
     // add info tooltip to nfz when clicked
     addNfzOverlay(map.value as Map, 'overlayPopup');
