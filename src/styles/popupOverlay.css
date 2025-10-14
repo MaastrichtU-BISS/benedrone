@@ -1,0 +1,24 @@
+#popup-overlay {
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#popup-overlay > .title {
+    font-size: 1.2rem;
+}
+
+#popup-overlay > .osmtaglist {
+    margin-top: 4px;
+    font-size: .9rem;
+}
+
+#popup-overlay .osmtag {
+    font-size: .9rem;
+    padding-left: 10px;
+}
+
+#popup-overlay img {
+    margin-top: 5px;
+    border-radius: 5px;
+}

@@ -155,31 +155,166 @@ export function addNfzOverlay(map: Map, elementId: string): void {
 
     if (clickedFeature instanceof Feature) {
       let coords = evt.coordinate
-
       const props = clickedFeature.getProperties()
-
-      const nameEle = document.createElement('b')
-      nameEle.innerText = props.name || props.txtname || props.source_txt || 'No name'
-
-      popupElement.appendChild(nameEle)
-
-      const localType = props.localtype
-      if (localType) {
-        const localTypeEle = document.createElement('div')
-        localTypeEle.innerText = localType
-        popupElement.appendChild(localTypeEle)
-      }
-
-      const specific = props.specifiek
-      if (specific) {
-        const specificEle = document.createElement('div')
-        specificEle.innerText = specific
-        popupElement.appendChild(specificEle)
-      }
-
+      extractMetadata(popupElement, props)
       popup.setPosition(coords)
     } else {
       popup.setPosition(undefined) // hide popup if clicked outside
     }
   })
+}
+
+function extractMetadata(popupElement: HTMLElement, props: any) {
+
+  const nameEle = document.createElement('b')
+  nameEle.classList.add('title')
+  nameEle.innerText = props.name || props.txtname || props.source_txt || 'No name'
+  popupElement.appendChild(nameEle)
+
+  const localType = props.localtype
+  if (localType) {
+    const localTypeEle = document.createElement('div')
+    localTypeEle.innerText = localType
+    popupElement.appendChild(localTypeEle)
+  }
+
+  const remarks = props.remarks
+  if(remarks) {
+    const remarksEle = document.createElement('div')
+    remarksEle.innerText = remarks
+    popupElement.appendChild(remarksEle)
+  }
+
+  const specific = props.specifiek
+  if (specific) {
+    const specificEle = document.createElement('div')
+    specificEle.innerText = specific
+    popupElement.appendChild(specificEle)
+  }
+
+  // OBS, NAV, APT, HOT
+  const elevation = props.elevation
+  if(elevation) {
+    const elevationEle = document.createElement('div')
+    elevationEle.innerHTML = `Elevation: ${elevation.value}${elevation.unit === 0 ? 'm' : ''}`
+    popupElement.appendChild(elevationEle)
+  }
+
+  // OBS
+  const height = props.height
+  if(height) {
+    const heightEle = document.createElement('div')
+    heightEle.innerText = `Height: ${height.value}${height.unit === 0 ? 'm' : 'units'}`
+    popupElement.appendChild(heightEle)
+  }
+
+  // RAA
+  const permittedAltitude = props.permittedAltitude
+  if(permittedAltitude) {
+    const permittedAltitudeEle = document.createElement('div')
+    permittedAltitudeEle.innerText = `Permitted Altitude: ${permittedAltitude.value}${permittedAltitude.unit === 0 ? 'm' : 'units'}`
+    popupElement.appendChild(permittedAltitudeEle)
+  }
+
+  // APT
+  const skydiveActivity = props.skydiveActivity
+  if(skydiveActivity !== undefined) {
+    const skydiveActivityEle = document.createElement('div')
+    skydiveActivityEle.innerHTML = `Skydive activity: ${skydiveActivity}`
+    popupElement.appendChild(skydiveActivityEle)
+  }
+
+  // APT
+  const _private = props.private
+  if(_private !== undefined) {
+    const _privateEle = document.createElement('div')
+    _privateEle.innerHTML = `Private: ${_private}`
+    popupElement.appendChild(_privateEle)
+  }
+
+  // APT
+  const winchOnly = props.winchOnly
+  if(winchOnly !== undefined) {
+    const winchOnlyEle = document.createElement('div')
+    winchOnlyEle.innerText = `Winch only: ${winchOnly}`
+    popupElement.appendChild(winchOnlyEle)
+  }
+
+  // RCA
+  const combustion = props.combustion
+  if(combustion !== undefined) {
+    const combustionEle = document.createElement('div')
+    combustionEle.innerText = `Combustion: ${combustion}`
+    popupElement.appendChild(combustionEle)
+  }
+
+  // RCA
+  const electric = props.electric
+  if(electric !== undefined) {
+    const electricEle = document.createElement('div')
+    electricEle.innerText = `Electric: ${electric}`
+    popupElement.appendChild(electricEle)
+  }
+
+  // RCA
+  const turbine = props.turbine
+  if(electric !== undefined) {
+    const turbineEle = document.createElement('div')
+    turbineEle.innerText = `Turbine: ${turbine}`
+    popupElement.appendChild(turbineEle)
+  }
+
+  // RAA
+  const icaoClass = props.icaoClass
+  if(icaoClass) {
+    const icaoClassEle = document.createElement('div')
+    icaoClassEle.innerText = `ICAO class: ${icaoClass}`
+    popupElement.appendChild(icaoClassEle)
+  }
+  
+
+  // OBS
+  const osmTags = props.osmTags
+  if(osmTags) {
+
+    const osmTagsEle = document.createElement('div')
+    osmTagsEle.innerHTML = '<b> OSM Tags:</b>'
+    osmTagsEle.classList.add('osmtaglist')
+
+    let imageSrc: string = '';
+    Object.entries(osmTags).forEach((keyValue) => {
+      const tagEle = document.createElement('div')
+      tagEle.classList.add('osmtag')
+      const key = keyValue[0]
+      let value = keyValue[1] as string
+      if(key == 'website' || key == 'url') {
+        value = `<a href="${value}" target="_blank">${value}</a>`
+      } else if(key == 'wikipedia') {
+        const split = value.split(':') 
+        value = `<a href="https://${split[0]}.wikipedia.org/wiki/${split[1]}" target="_blank" rel="noopener noreferrer">${value}</a>`
+      } else if(key == 'phone') {
+        value = `<a href="tel:${value}" aria-label="Call ${value}">${value}</a>`
+      } else if(key == 'image') {
+        const split = value.split(':')
+        imageSrc = value
+        if(split[0] == 'File') {
+          imageSrc = `https://commons.wikimedia.org/wiki/${value}`
+        }
+        value = `<a href="${imageSrc}" target="_blank">${value}</a>`
+      }
+      tagEle.innerHTML = `<b>${key}</b>: ${value}`
+      osmTagsEle.appendChild(tagEle)
+    })
+
+    if(imageSrc.length) {
+      const imageEle = document.createElement('img')
+      imageEle.alt = 'Image could not be loaded'
+      imageEle.height = 100
+      imageEle.width = 100
+      imageEle.src = imageSrc
+      popupElement.appendChild(imageEle)
+    }
+
+    popupElement.appendChild(osmTagsEle)
+  }
 }

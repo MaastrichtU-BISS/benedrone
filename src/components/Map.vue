@@ -37,25 +37,12 @@ onMounted(async () => {
     addControlGeocoder(map.value as Map);
 
     // add info tooltip to nfz when clicked
-    addNfzOverlay(map.value as Map, 'overlayPopup');
+    addNfzOverlay(map.value as Map, 'popup-overlay');
 });
 
 </script>
 
 <template>
     <div id="map"></div>
-    <div id="overlayPopup" class="ol-popup"></div>
+    <div id="popup-overlay" class="ol-popup"></div>
 </template>
-
-<style scoped>
-#map {
-    width: 100%;
-    height: 100vh;
-}
-
-#overlayPopup {
-    background-color: white;
-    padding: 8px;
-    border-radius: 10px;
-}
-</style>
